@@ -1,0 +1,32 @@
+﻿<Application x:Class="ShoesAtt2.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:ShoesAtt2"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Times New Roman"></Setter>
+            <Setter Property="FontSize" Value="25"></Setter>
+            <Setter Property="Margin" Value="10"></Setter>
+        </Style>
+
+        <Style TargetType="Button">
+            <Setter Property="FontFamily" Value="#00FA9A"></Setter>
+            <Setter Property="FontSize" Value="25"></Setter>
+            <Setter Property="Margin" Value="10"></Setter>
+            <Setter Property="Background" Value="#00FA9A"></Setter>
+
+        </Style>
+
+        <Style TargetType="Image">
+            <Setter Property="MaxHeight" Value="200px">
+            </Setter>
+            <Setter Property="MaxWidth" Value="200px">
+            </Setter>
+            <Setter Property="Margin" Value="10"></Setter>
+
+        </Style>
+
+        
+    </Application.Resources>
+</Application>

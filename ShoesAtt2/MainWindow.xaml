@@ -1,0 +1,29 @@
+﻿<Window x:Class="ShoesAtt2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ShoesAtt2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Icon="/img/picture.png">
+    <Grid Background="#7FFF00">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+
+        </Grid.RowDefinitions>
+
+        <!--<WrapPanel Orientation="Horizontal" Grid.Row="0">-->
+        <Image Source="/img/Icon.png" Width="80px" HorizontalAlignment="Left" Grid.Row="0"></Image>
+        <TextBlock HorizontalAlignment="Center" Grid.Row="0">
+        Обувной
+        </TextBlock>
+        <Button Visibility="Hidden" HorizontalAlignment="Right" Grid.Row="0">
+            Назад
+        </Button>
+        <!--</WrapPanel>-->
+
+        <Frame Name="MainFrame" Grid.Row="1" Background="White"></Frame>
+
+    </Grid>
+</Window>
