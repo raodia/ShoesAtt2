@@ -27,6 +27,8 @@ namespace ShoesAtt2
             var currentData = Shavaleev_shoesEntities.GetContext().Products.ToList();
             Listv.ItemsSource = currentData;
             
+
         }
     }
+
 }

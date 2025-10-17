@@ -54,7 +54,11 @@
                         <TextBlock Text="{Binding ProductsProducer, StringFormat=Производитель:{0}}" Grid.Row="2" Grid.Column="1"></TextBlock>
                         <TextBlock Text="{Binding ProductsSupplier, StringFormat=Поставщик:{0}}" Grid.Row="3" Grid.Column="1"></TextBlock>
 
-                         <TextBlock Text="{Binding ProductsCost, StringFormat={}{0}р.}" Grid.Row="4" Grid.Column="1"></TextBlock>
+                            <StackPanel  Grid.Row="4" Grid.Column="1" Orientation="Horizontal">
+                                <TextBlock x:Name="realCost" TextDecorations="{Binding TextStyle}" Foreground="{Binding CostColor}" Text="{Binding ProductsCost, StringFormat={}{0}р.}"></TextBlock>
+                                <TextBlock x:Name="discCost" Foreground="{Binding DiscCostColor}" Text="{Binding ChangedCost, StringFormat={}{0}р.}"></TextBlock>
+                            </StackPanel>
+                        
                         <TextBlock Text="{Binding ProductsMeasure, StringFormat=Единицы измерения:{0}}" Grid.Row="5" Grid.Column="1"></TextBlock>
                         <TextBlock Text="{Binding ProductsCountOnInventory, StringFormat=Количество на складе:{0}}" Grid.Row="6" Grid.Column="1"></TextBlock>
 

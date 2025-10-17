@@ -11,7 +11,8 @@ namespace ShoesAtt2
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Windows.Media;
+
     public partial class Products
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -41,6 +42,7 @@ namespace ShoesAtt2
             }
         }
 
+        // цвет если нет продуктов на складе +
         public string Color
         {
             get
@@ -49,25 +51,60 @@ namespace ShoesAtt2
                 {
                     return "#2E8B57";
                 }
+
+                if ( ProductsCountOnInventory == 0 )
+                {
+                    return "#87CEEB";
+                }
                 return "#FFFFFF";
             }
         }
 
-        public string NoProductsColor
-        {
-            get
-            {
-                return ""; // цвет если нет продуктов на складе
-            }
-        }
-
-        // перечеркнуть и высчитать обн цену
+        // перечеркнуть и высчитать обн цену +
 
         public double ChangedCost
         {
             get
             {
-                return Convert.ToInt64( ProductsCost ) - Convert.ToInt64(ProductsCost) * (ProductsDiscount / 100);
+                return Convert.ToDouble( ProductsCost ) - Convert.ToDouble( ProductsCost ) * ((double)ProductsDiscount / 100);
+            }
+        }
+
+        public SolidColorBrush CostColor
+        {
+            get
+            {
+                if ( ChangedCost != Convert.ToDouble( ProductsCost ) )
+                {
+                return new SolidColorBrush ( Colors.Red );
+                }
+                    return new SolidColorBrush ( Colors.Black );
+
+            }
+        }
+
+        public SolidColorBrush DiscCostColor
+        {
+            get
+            {
+                if (ChangedCost == Convert.ToDouble(ProductsCost))
+                {
+                return new SolidColorBrush(Colors.Transparent);
+                }
+                    return new SolidColorBrush(Colors.Black);
+
+            }
+        }
+
+        public string TextStyle
+        {
+            get
+            {
+                if (ChangedCost != Convert.ToDouble(ProductsCost))
+                {
+                    return "Strikethrough";
+                }
+                return "None";
             }
         }
 
