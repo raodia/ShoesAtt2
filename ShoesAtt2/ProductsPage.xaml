@@ -10,20 +10,57 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"></RowDefinition>
-            <!--<RowDefinition Height="*> </RowDefinition>-->
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"> </RowDefinition>
             <!--<RowDefinition Height="*></RowDefinition>-->
         </Grid.RowDefinitions>
 
-        <ListView Name="Listv" >
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <StackPanel Orientation="Vertical">
+                <TextBlock>
+                    Поиск ( для поиска по нескольким критериям вводите данные через запятую )
+                </TextBlock>
+                <TextBox Name="SearchTB" Width="500px" Margin="20px" TextChanged="SearchTB_TextChanged" Height="30px" FontFamily="Times New Roman" FontSize="25px">
+                    
+                </TextBox>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical">
+                
+                <RadioButton GroupName="sorting" Name="sortDesc" FontSize="14px" Checked="sortDesc_Checked">
+                    По убыванию товара на складе
+                </RadioButton>
+                <RadioButton Name="sortAsc" GroupName="sorting" FontSize="14px" Checked="sortAsc_Checked">
+                    По возрастанию товара на складе
+                </RadioButton>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical">
+                <ComboBox Name="FilterCB" SelectionChanged="FilterCB_SelectionChanged" Width="300px" Height="28px">
+                    <TextBlock Margin="0px">
+                        Все поставщики
+                    </TextBlock>
+
+                    <TextBlock Margin="0px">
+                        Kari
+                    </TextBlock>
+
+                    <TextBlock Margin="0px">
+                        Обувь для вас
+                    </TextBlock>
+                </ComboBox>
+            </StackPanel>
+        </StackPanel>
+
+        <ListView Name="Listv" Grid.Row="1">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Border Name="Border" BorderBrush="Black" BorderThickness="2">
                     <Grid Background="{Binding Color}">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition Width="auto"></ColumnDefinition>
+                            <ColumnDefinition Width="1000px"></ColumnDefinition>
+                            <ColumnDefinition Width="auto"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
 
                         <Grid.RowDefinitions>
@@ -31,8 +68,8 @@
                             <RowDefinition></RowDefinition>
                             <RowDefinition></RowDefinition>
                             <RowDefinition></RowDefinition>
-
                             <RowDefinition></RowDefinition>
+
                             <RowDefinition></RowDefinition>
                             <RowDefinition></RowDefinition>
                         </Grid.RowDefinitions>
@@ -62,7 +99,7 @@
                         <TextBlock Text="{Binding ProductsMeasure, StringFormat=Единицы измерения:{0}}" Grid.Row="5" Grid.Column="1"></TextBlock>
                         <TextBlock Text="{Binding ProductsCountOnInventory, StringFormat=Количество на складе:{0}}" Grid.Row="6" Grid.Column="1"></TextBlock>
 
-                        <TextBlock Text="{Binding ProductsDiscount, StringFormat=Скидка: {0}%}" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Right"></TextBlock>
+                        <TextBlock Text="{Binding ProductsDiscount, StringFormat=Скидка: {0}%}" Grid.RowSpan="7" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Right"></TextBlock>
                     </Grid>
                      </Border>
                 </DataTemplate>

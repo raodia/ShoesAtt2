@@ -109,7 +109,7 @@ namespace ShoesAtt2
         }
 
         public string ProductsArticle { get; set; }
-        public string ProductsName { get; set; }
+        public string ProductsName { get; set; } // search
         public string ProductsMeasure { get; set; }
         public string ProductsCost { get; set; }
         public string ProductsSupplier { get; set; }

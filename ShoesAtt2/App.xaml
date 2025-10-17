@@ -6,7 +6,7 @@
     <Application.Resources>
         <Style TargetType="TextBlock">
             <Setter Property="FontFamily" Value="Times New Roman"></Setter>
-            <Setter Property="FontSize" Value="25"></Setter>
+            <Setter Property="FontSize" Value="20"></Setter>
             <Setter Property="Margin" Value="10"></Setter>
         </Style>
 
